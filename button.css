@@ -1,0 +1,197 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+:root {
+  --height-coding-button: 50px;
+  --bg-color-coding-button: inherit;
+  --color-coding-button: inherit;
+  --fontSize-coding-button: inherit;
+  --border-radius-coding-button: 0px;
+  --border-width-coding-button: 1px;
+  --border-color-coding-button: transparent;
+  --border-style-coding-button: solid;
+
+  --border-color-hover-coding-button: transparent;
+  --outline-coding-button: none;
+  --outline-hover-coding-button: none;
+  --outline-active-coding-button: none;
+  /* rgba(255, 255, 255, 0.356) */
+
+  --primary-color: orange;
+  --secondary-color: blueviolet;
+  --tertiary-color: pink;
+
+  --dark-color: #161c2d;
+  --light-color: #f1f4f8;
+  --success-color: #42ba96;
+  --green-color: #22c55e;
+  --info-color: #467fd0;
+  --dodgerblue-color: dodgerblue;
+  --danger-color: #df4759;
+  --warning-color: #ffc107;
+}
+
+button[data-name="coding"][data-type="submit"] {
+  position: relative;
+  background-color: var(--bg-color-coding-button);
+  min-height: var(--height-coding-button);
+  width: 100%;
+  font-size: var(--fontSize-coding-button);
+  cursor: pointer;
+  color: var(--color-coding-button);
+  border-radius: var(--border-radius-coding-button);
+  border: none;
+  overflow: hidden;
+  border-width: var(--border-width-coding-button);
+  border-style: var(--border-style-coding-button);
+  border-color: var(--border-color-coding-button);
+  transition: all 0.3s ease;
+  outline: var(--outline-coding-button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[data-name="coding"][data-type="submit"]:hover {
+  border-color: var(--border-color-hover-coding-button);
+  outline: var(--outline-hover-coding-button);
+}
+button[data-name="coding"][data-type="submit"]:active {
+  border-color: var(--border-color-hover-coding-button);
+  outline: var(--outline-active-coding-button);
+}
+button[data-name="coding"][data-type="submit"] p {
+  width: fit-content;
+  height: fit-content;
+}
+button[data-name="coding"][data-type="submit"] .spot {
+  position: absolute;
+
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+
+  /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),rgba(255,255,255,0)); */
+  backdrop-filter: blur(0.2px);
+  -webkit-backdrop-filter: blur(0.2px);
+  /* border: 1px solid black; */
+}
+button[data-name="coding"][data-type="submit"] .spot.active {
+  transform: scale(20);
+  opacity: 0.2;
+}
+
+button[data-name="coding"][data-type="submit"] .loading {
+  display: none;
+}
+button[data-name="coding"][data-type="submit"][data-loading="true"]:hover {
+  /* border: none; */
+  cursor: not-allowed;
+}
+
+button[data-name="coding"][data-type="submit"][data-loading="true"] .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: inherit;
+  background-color: inherit;
+  width: inherit;
+  height: inherit;
+}
+button[data-name="coding"][data-type="submit"][data-loading="true"]
+  .loading
+  img {
+  height: calc(100% - 20px);
+}
+
+button[data-name="coding"][data-type="submit"].danger {
+  background-color: var(--danger-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].danger.out {
+  background-color: inherit;
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+button[data-name="coding"][data-type="submit"].warning {
+  background-color: var(--warning-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].warning.out {
+  background-color: inherit;
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+button[data-name="coding"][data-type="submit"].info {
+  background-color: var(--info-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].info.out {
+  background-color: inherit;
+  border-color: var(--info-color);
+  color: var(--info-color);
+}
+button[data-name="coding"][data-type="submit"].dodgerblue {
+  background-color: var(--dodgerblue-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].dodgerblue.out {
+  background-color: inherit;
+  border-color: var(--dodgerblue-color);
+  color: var(--dodgerblue-color);
+}
+button[data-name="coding"][data-type="submit"].success {
+  background-color: var(--success-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].success.out {
+  background-color: inherit;
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+button[data-name="coding"][data-type="submit"].green {
+  background-color: var(--green-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].green.out {
+  background-color: inherit;
+  border-color: var(--green-color);
+  color: var(--green-color);
+}
+button[data-name="coding"][data-type="submit"].primary {
+  background-color: var(--primary-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].primary.out {
+  background-color: inherit;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+button[data-name="coding"][data-type="submit"].secondary {
+  background-color: var(--secondary-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].secondary.out {
+  background-color: inherit;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+button[data-name="coding"][data-type="submit"].tertiary {
+  background-color: var(--tertiary-color);
+  color: whitesmoke;
+}
+button[data-name="coding"][data-type="submit"].tertiary.out {
+  background-color: inherit;
+  border-color: var(--tertiary-color);
+  color: var(--tertiary-color);
+}

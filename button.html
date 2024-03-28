@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="../../fontawesome/css/all.css" />
+  </head>
+  <body>
+    <div style="background-color: white">
+      <div id="template_btn" style="width: 150px"></div>
+    </div>
+    <script src="../../lib/modules/3.button.js"></script>
+    <script>
+      const template_btn = document.querySelector("#template_btn");
+      coding_button.element(
+        template_btn,
+        {
+          id: "submit_btn",
+          type: "submit", // default btn or submit
+          value: '<i class="fa-solid fa-trash-can"></i>', // node /Element
+          addClass: "info",
+          attributes: "",
+          addStyle: "", // default has transition
+          isEnableLoading: true, // default false boolean
+          loadingNode: "Loading...", // node /Element
+          isEnableWavePoint: true, // default false boolean
+          event: function (parent, loading) {
+            loading.start();
+            setTimeout(loading.stop, 500);
+            // alert("a wiat wait don'[t click ]");
+          }, // optional
+          style: {
+            border_width: "2px",
+          },
+        },
+        0
+      );
+    </script>
+  </body>
+</html>
